@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pixel Agents privacy policy</title>
+<meta name="description" content="Pixel Agents collects no data. Everything stays on your Mac.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="island">
+  <div class="who">
+    <div class="badge" style="--tint:#30B0C7;--row:-240px" aria-hidden="true">
+      <i class="base"></i><i class="shirt"></i><i class="tint"></i>
+    </div>
+    <div>
+      <h1>Pixel Agents privacy policy</h1>
+      <div class="state">Data collected: none</div>
+    </div>
+  </div>
+  <p class="command">Connects to: 127.0.0.1 (this Mac only)</p>
+  <div class="foot">
+    <span><a href="support.html">Support</a></span>
+    <span class="pill green">Stays on your Mac</span>
+  </div>
+</header>
+
+<main>
+  <p class="lede">Pixel Agents doesn’t collect, store or share any personal data. It has no accounts, analytics, ads or tracking, and it can’t send anything over the internet.</p>
+  <p class="updated">Effective 21 October 2026. Applies to Pixel Agents for Mac and its Claude Code plugin.</p>
+
+  <h2>What the app receives</h2>
+  <div class="group">
+    <p>The Pixel Agents plugin for Claude Code sends updates about your sessions to the app over a local connection on your own Mac (127.0.0.1, port 47290). These updates can include:</p>
+    <ul>
+      <li>the session ID, title and working folder</li>
+      <li>the model, effort level and agent type</li>
+      <li>the tool Claude wants to use and its input, such as a command or a file path</li>
+      <li>questions Claude asks you, with their options</li>
+      <li>the first 500 characters of Claude’s last reply, or an error message</li>
+      <li>task progress, subagent count and which terminal app the session runs in</li>
+    </ul>
+    <p>The app uses this only to show your sessions on screen and to send your answer (Allow, Deny or your choice) back to Claude Code.</p>
+  </div>
+
+  <h2>What the app keeps</h2>
+  <div class="group">
+    <div>
+      <h3>Session information</h3>
+      <p>Kept in memory only, never written to disk. It’s removed when a session ends and erased when you quit the app.</p>
+    </div>
+    <div>
+      <h3>Settings</h3>
+      <p>Your choices for Pause notifications and Mute chime, and whether setup has finished, are saved in the app’s sandbox on your Mac. Launch at login is off until you turn it on, and macOS manages it in System Settings › General › Login Items.</p>
+    </div>
+    <div>
+      <h3>Clipboard</h3>
+      <p>The app writes to the clipboard only when you click Copy or Copy session ID. It never reads the clipboard.</p>
+    </div>
+  </div>
+
+  <h2>What leaves your Mac</h2>
+  <div class="group">
+    <p>Nothing. The app accepts connections only from your own Mac and is built without permission to make outgoing network connections. It contains no third-party code, SDKs or services.</p>
+    <p>Claude Code itself talks to Anthropic as it always does, under <a href="https://www.anthropic.com/legal/privacy">Anthropic’s privacy policy</a>. Pixel Agents doesn’t change what Claude Code sends. If you choose Always allow, Claude Code saves that permission rule in its own settings.</p>
+  </div>
+
+  <h2>Your choices</h2>
+  <div class="group">
+    <p>Because nothing is collected, there’s nothing to request, export or delete from us. To remove everything from your Mac, quit Pixel Agents, move it to the Bin, and uninstall the plugin with <code>/plugin uninstall pixel-agents@pixel-agents</code>. Saved settings live in <code>~/Library/Containers/evolvedqube.pixel-agent</code>, which you can delete.</p>
+  </div>
+
+  <h2>Children</h2>
+  <div class="group">
+    <p>Pixel Agents is a developer tool and isn’t directed at children. It collects no data from anyone.</p>
+  </div>
+
+  <h2>Changes and contact</h2>
+  <div class="group">
+    <p>If this policy changes, we’ll update this page and its effective date. Questions? Email <a href="mailto:evolvedqube@gmail.com">evolvedqube@gmail.com</a> or open an issue at <a href="https://github.com/evolvedqube/pixel-agents/issues">github.com/evolvedqube/pixel-agents/issues</a>.</p>
+  </div>
+</main>
+
+<footer>
+  <nav><a href="support.html">Support</a><a href="privacy.html">Privacy</a></nav>
+  <p>Claude and Claude Code are trademarks of Anthropic. Pixel Agents is an independent app, not affiliated with Anthropic.</p>
+</footer>
+</body>
+</html>

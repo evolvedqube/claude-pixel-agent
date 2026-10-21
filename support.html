@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pixel Agents support</title>
+<meta name="description" content="Help with setting up and using Pixel Agents, the Mac menu bar app for Claude Code sessions.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="island">
+  <div class="who">
+    <div class="badge" style="--tint:#FF2D55;--row:-120px" aria-hidden="true">
+      <i class="base"></i><i class="shirt"></i><i class="tint"></i>
+    </div>
+    <div>
+      <h1>Pixel Agents support</h1>
+      <div class="state">Has a question</div>
+    </div>
+  </div>
+  <p class="ask">What do you need help with?</p>
+  <nav class="options" aria-label="Support topics">
+    <a href="#setup">Set up<small>Install the app and the Claude Code plugin</small></a>
+    <a href="#troubleshooting">Fix a problem<small>Sessions missing, port in use, no island</small></a>
+    <a href="#contact">Contact us<small>Report a bug or ask a question</small></a>
+  </nav>
+  <div class="foot"><span><a href="privacy.html">Privacy</a></span></div>
+</header>
+
+<main>
+  <p class="lede">Pixel Agents gives each Claude Code session a pixel robot in your menu bar, and brings its permission requests and questions to the notch so you can answer from any app.</p>
+  <p class="updated">Version 2.0. Requires macOS 26.6 or later and Claude Code.</p>
+
+  <h2 id="setup">Set up</h2>
+  <div class="group">
+    <ol>
+      <li>Open Pixel Agents. The Setup window shows <strong>Listening on 127.0.0.1:47290</strong> when it’s ready.</li>
+      <li>In any Claude Code session, run these two commands to install the plugin:
+        <pre id="install">/plugin marketplace add evolvedqube/pixel-agents
+/plugin install pixel-agents@pixel-agents</pre>
+        <button class="copy" type="button" data-copy="install">Copy</button>
+      </li>
+      <li>Restart Claude Code sessions that were already running. New sessions appear on their own.</li>
+    </ol>
+    <p class="note">To open Pixel Agents when you log in, turn on Launch at login in the Setup window. Open it any time from the menu bar popover with Setup…</p>
+  </div>
+
+  <h2>Use it</h2>
+  <div class="group">
+    <div>
+      <h3>See your sessions</h3>
+      <p>Click the robot in the menu bar. The office shows up to 8 sessions at their desks, and the list below shows them all with their state: Needs you, Your move, Working or Idle. Click a session for its folder, model, tasks, subagents and last reply.</p>
+    </div>
+    <div>
+      <h3>Answer from the notch</h3>
+      <p>When Claude asks for permission, the island shows the tool and command. Choose Allow, Always allow or Deny. For questions, pick an option or type your own answer. If you don’t answer within about two minutes, the request goes back to your terminal.</p>
+    </div>
+    <div>
+      <h3>Stay focused</h3>
+      <p><strong>Hide</strong> takes the island off screen until the next request, or until you click Show requests. <strong>Pause notifications</strong> sends every request straight to the terminal, with no island and no chime. <strong>Mute chime</strong> keeps the island but silences it.</p>
+    </div>
+  </div>
+
+  <h2 id="troubleshooting">Fix a problem</h2>
+  <div class="group">
+    <div>
+      <h3>My sessions don’t show up</h3>
+      <p>Make sure Pixel Agents is running and the plugin is installed, then restart the Claude Code session. Sessions started before the plugin was installed don’t send updates.</p>
+    </div>
+    <div>
+      <h3>Setup says port 47290 is already in use</h3>
+      <p>Another app is using the port. Quit it (or a second copy of Pixel Agents), then reopen Pixel Agents.</p>
+    </div>
+    <div>
+      <h3>The island didn’t appear</h3>
+      <p>Check that Pause notifications is off and the island isn’t hidden (click Show requests). The request is still waiting in your terminal either way.</p>
+    </div>
+    <div>
+      <h3>The island says “Answer in terminal”</h3>
+      <p>An MCP server is asking for input. Those can only be answered in the terminal, so switch to it to reply.</p>
+    </div>
+    <div>
+      <h3>A session stays Working when it isn’t</h3>
+      <p>Sessions with no updates for 15 minutes are greyed out as stale, and leave once the session ends.</p>
+    </div>
+  </div>
+
+  <h2>Uninstall</h2>
+  <div class="group">
+    <div>
+      <p>Remove the plugin in Claude Code:</p>
+      <pre id="uninstall">/plugin uninstall pixel-agents@pixel-agents
+/plugin marketplace remove pixel-agents</pre>
+      <button class="copy" type="button" data-copy="uninstall">Copy</button>
+    </div>
+    <p>Then quit Pixel Agents and move it to the Bin. Without the app running, the plugin does nothing and Claude Code works as usual.</p>
+  </div>
+
+  <h2 id="contact">Contact us</h2>
+  <div class="group">
+    <div>
+      <h3>Report a bug or ask a question</h3>
+      <p>Open an issue at <a href="https://github.com/evolvedqube/pixel-agents/issues">github.com/evolvedqube/pixel-agents/issues</a>, or email <a href="mailto:evolvedqube@gmail.com">evolvedqube@gmail.com</a>. We usually reply within two business days.</p>
+    </div>
+    <p class="note">Include your macOS version, the Pixel Agents version and what you expected to happen. Please leave out prompts, code and file paths you don’t want to share.</p>
+  </div>
+</main>
+
+<footer>
+  <nav><a href="support.html">Support</a><a href="privacy.html">Privacy</a></nav>
+  <p>Claude and Claude Code are trademarks of Anthropic. Pixel Agents is an independent app, not affiliated with Anthropic.</p>
+</footer>
+
+<script>
+  for (const b of document.querySelectorAll('[data-copy]')) {
+    b.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(document.getElementById(b.dataset.copy).textContent);
+      b.textContent = 'Copied';
+      setTimeout(() => { b.textContent = 'Copy'; }, 1500);
+    });
+  }
+</script>
+</body>
+</html>
